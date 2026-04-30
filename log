@@ -88,3 +88,9 @@ treemap.c:138:17: error: implicit declaration of function ‘lower_than’ [-Wim
   138 |             if (lower_than(tree->current->pair->key, aux->pair->key) == 0)
       |                 ^~~~~~~~~~
 c13ef3f
+Thu Apr 30 08:58:26 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|7
+total_score: 8/60
+75d4a58
