@@ -140,6 +140,8 @@ Pair * nextTreeMap(TreeMap * tree) {
                 tree->current = aux->parent;
                 return tree->current->pair;
             }
+
+            aux = aux->parent;
         }
     return NULL;
 }
