@@ -104,15 +104,29 @@ void eraseTreeMap(TreeMap * tree, void* key){
 Pair * firstTreeMap(TreeMap * tree) {
     TreeNode* aux = tree->root;
 
-    while (aux->left != NULL)
-        {
-            aux = aux->left;
-        }
+    while (aux->left != NULL) aux = aux->left;
     
     return aux->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+
+    TreeNode* aux = tree->current;
+
+    if (aux->right != NULL)
+    {
+        current = aux->right;
+        return current->pair;
+    }
+
+    while (1)
+        {
+            if (aux->parent->pair->key > current->pair->key)
+            {
+                current = aux->parent;
+                return current->pair;
+            }
+        }
     return NULL;
 }
 
