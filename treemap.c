@@ -119,7 +119,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     {
         aux = aux->right;
 
-        if ((aux->left != NULL) && (tree->lower_than(tree->current->pair->key, aux->pair->key) == 0))
+        if (aux->left != NULL)
         {
             aux = aux->left;
         }
