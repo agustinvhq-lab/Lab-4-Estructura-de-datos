@@ -117,6 +117,11 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (aux->right != NULL)
     {
         aux = aux->right;
+
+        if ((aux->left != NULL) && (aux->left->pair->key > tree->current->pair->key))
+        {
+            tree->current = aux->left;
+        }
         // VER SI ESE HIJO TIENE OTRO EN LA IZQUIERDA CON KEY MAYOR A KEY DE CURRENT...
         //while ((aux->left != NULL) && (aux->left->pair->key > tree->current->pair->key)) 
           //  {
