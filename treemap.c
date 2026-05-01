@@ -58,17 +58,18 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
     while (1)
     {
+        if (aux == NULL) return NULL;
+        
         if (tree->lower_than(key, aux->pair->key) == 1) aux = aux->left;
 
         else if (tree->lower_than(aux->pair->key, key) == 1) aux = aux->right;
 
-        else break;
+        else
+        {
+            tree->current = aux;
+            return tree->current->pair;
+        }
     }
-
-    if (aux == NULL) return NULL;
-
-    tree->current = aux;
-    return tree->current->pair;
 }
 
 // 3. Implemente la función void insertTreeMap(TreeMap * tree, void* key, void * value). 
