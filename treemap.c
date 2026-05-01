@@ -60,20 +60,19 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     {
         if (tree->lower_than(key, aux->pair->key) == 1)
         {
-
             aux = aux->left;
         }
 
         else if (tree->lower_than(aux->pair->key, key) == 1)
         {
-
             aux = aux->right;
         }
 
         else break;
     }
-    
-    return aux->pair;
+
+    tree->current = aux;
+    return tree->current->pair;
 }
 
 // 3. Implemente la función void insertTreeMap(TreeMap * tree, void* key, void * value). 
