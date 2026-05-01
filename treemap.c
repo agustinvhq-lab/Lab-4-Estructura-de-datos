@@ -130,7 +130,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         {
             if (tree->lower_than(tree->current->pair->key, aux->pair->key) == 0)
             {
-                tree->current = aux->parent;
+                tree->current = aux;
                 return tree->current->pair;
             }
 
