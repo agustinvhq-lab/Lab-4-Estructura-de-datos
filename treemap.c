@@ -174,8 +174,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
     else
     {
-        TreeNode minimo;
-        minimum(aux->right);
+        TreeNode * minimo;
+        minimo = minimum(aux->right);
         aux->pair = minimo->pair;
         free(minimo);
     }
