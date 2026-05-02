@@ -172,7 +172,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         aux = aux->right;
 
         // VER SI TIENE HIJOS A LA IZQ. MAYORES QUE LA KEY DE CURRENT...
-        while (aux->left != NULL) aux = aux->left;
+        while ((aux->left != NULL) && (tree->lower_than(tree->current->pair->key, aux->left->pair->key) == 1)) aux = aux->left;
 
         tree->current = aux;
         
