@@ -251,7 +251,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     {
         if (aux == NULL) return nodoUB->pair;
 
-        if (tree->lower_than(key, aux->pair->key) == 0)
+        if (tree->lower_than(key, aux->pair->key) == 1)
         {
             if (nodoUB == NULL) nodoUB = aux;
 
