@@ -144,6 +144,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
         free(aux);
     }
+
+    return;
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
