@@ -316,3 +316,20 @@ Sat May  2 02:42:20 AM UTC 2026:
  1 file changed, 2 insertions(+)
  tests:  0|0
 150db27
+Sat May  2 04:09:51 AM UTC 2026: 
+ treemap.c | 23 +++++++++++++++++++++--
+ 1 file changed, 21 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:151:33: error: expected expression before ‘TreeNode’
+  151 |         if (aux->right != NULL) TreeNode * hijo = aux->right;
+      |                                 ^~~~~~~~
+treemap.c:152:37: error: expected expression before ‘TreeNode’
+  152 |         else if (aux->left != NULL) TreeNode * hijo = aux->left;
+      |                                     ^~~~~~~~
+treemap.c:156:27: error: ‘hijo’ undeclared (first use in this function)
+  156 |             padre->left = hijo;
+      |                           ^~~~
+treemap.c:156:27: note: each undeclared identifier is reported only once for each function it appears in
+2bfbfe5
