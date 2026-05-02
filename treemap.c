@@ -138,8 +138,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
     if (aux->left == NULL && aux->right == NULL)
     {
+        // SE SITUA A LA IZQ DEL PADRE
         if (aux->parent->left == aux) aux->parent->left = NULL;
-            
+
+        // SE SITUA A LA DER DEL PADRE
         else if (aux->parent->right == aux) aux->parent->right = NULL;
 
         free(aux);
@@ -149,15 +151,19 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     {
         TreeNode * padre = aux->parent;
         TreeNode * hijo;
+
+        // DE QUE LADO ESTA EL HIJO...
         if (aux->right != NULL) hijo = aux->right;
         else if (aux->left != NULL) hijo = aux->left;
 
+        // AUX SE SITUA A LA IZQ DEL PADRE...
         if (padre->left == aux)
         {
             padre->left = hijo;
             hijo->parent = padre;
             free(aux);
         }
+        // AUX SE SITUA A LA DER DEL PADRE...
         else if (padre->right == aux)
         {
             padre->right = hijo;
@@ -166,6 +172,13 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
     }
 
+    else
+    {
+        TreeNode minimo;
+        minimo = minimum(aux->right);
+        aux->pair = minimo->pair;
+        free(minimo);
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
@@ -230,6 +243,7 @@ Pair * nextTreeMap(TreeMap * tree) {
 // Finalmente retorne el par del nodo ub_node.
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    
     return NULL;
 }
 
