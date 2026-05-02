@@ -249,7 +249,11 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
     while (1)
     {
-        if (aux == NULL) return nodoUB->pair;
+        if (aux == NULL)
+        {
+            if (nodoUB == NULL) return NULL;
+            return nodoUB->pair;
+        }
 
         if (tree->lower_than(key, aux->pair->key) == 1)
         {
